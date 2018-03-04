@@ -13,13 +13,11 @@ data class Token(var token: String? = null) {
         context = comingApllicationContext
     }
 
-    var newToken: String
+    var newToken: String = ""
         set(value) {
             token = saveToken(value)
         }
-        get() {
-            return returnToken()
-        }
+
 
     val saveToken: (String) -> String = { comingToken ->
         context?.getSharedPreferences("user_token", Context.MODE_PRIVATE)?.apply {
@@ -31,10 +29,10 @@ data class Token(var token: String? = null) {
         comingToken
     }
 
-    val returnToken: () -> String = {
+    val returnToken: () -> String? = {
         context?.getSharedPreferences("user_token", Context.MODE_PRIVATE)?.let {
             it.getString("user_token", "")
-        } ?: ""
+        } ?: null
     }
 }
 
