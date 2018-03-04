@@ -2,6 +2,7 @@ package androi.com.stella.stella_android.View
 
 import androi.com.stella.stella_android.Model.Token
 import androi.com.stella.stella_android.R
+import androi.com.stella.stella_android.Utility.Stella_Application
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
