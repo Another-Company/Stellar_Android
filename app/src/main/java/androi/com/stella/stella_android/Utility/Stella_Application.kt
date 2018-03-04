@@ -14,12 +14,13 @@ import java.util.concurrent.TimeUnit
 /**
  * Created by hyun on 2018. 2. 25..
  */
-class Stella_Application : Application() {
+public class Stella_Application : Application() {
 
     var isLogin: Boolean = false
-    var toen: String = ""
+    protected var token: String = ""
     val context: Context = applicationContext
-    val apiAddress: ApiAddress by lazy {
+
+    protected val apiAddress: ApiAddress by lazy {
         setupRetrofit()
     }
 
